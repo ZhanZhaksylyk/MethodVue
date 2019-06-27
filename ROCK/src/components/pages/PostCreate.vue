@@ -11,6 +11,11 @@
 			Description
 			<hr>
 			<button @click='add'>ADD</button>
+			<div v-if='clicked'>
+				<h1>
+					Find your changes in the main page
+				</h1>
+			</div>
 		</div>
 	</div>
 </template>
@@ -24,12 +29,14 @@
 				form:{
 					title:"",
 					description:""
-				}
+				},
+				clicked:false
 			}
 		},
 		methods:{
 			add(){
-				this.posts.posts.push(this.form)	
+				this.posts.posts.push(this.form)
+				this.clicked=!this.clicked		
 			},//to delete use splice(index,how many vars starting from tha index you would want to delete)
 		}
 	}
